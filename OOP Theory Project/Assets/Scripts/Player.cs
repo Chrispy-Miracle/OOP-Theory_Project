@@ -19,23 +19,32 @@ public class Player : Character
     // Start is called before the first frame update
     void Start()
     {
+        DeactivateIfNot(gameObject.name); // ensures just one player object
         playerRigidBody = gameObject.GetComponent<Rigidbody>();
     }
 
 
     public override void Move() {
         // enable player movement
-        float horizontalInput = Input.GetAxis("Horizontal");
-        
-        transform.Translate(Vector3.right * horizontalInput * moveSpeed * Time.deltaTime);  
-    
-        Jump();
+        HandleHorizontalMovement();
+        HandleJump();
     }
 
 
-    public void Jump() {
+    void HandleHorizontalMovement() {
+        float horizontalInput = Input.GetAxis("Horizontal");
+        transform.Translate(Vector3.right * horizontalInput * moveSpeed * Time.deltaTime); 
+    }
+
+    public void HandleJump() {
         if (Input.GetButtonDown("Jump")) { // space or y 
             playerRigidBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
+    }
+
+    public void DeactivateIfNot(string playerType) {
+        if (MainManager.Instance.playerChoice.name != playerType) {
+            gameObject.SetActive(false);
+        };
     }
 }
