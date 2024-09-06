@@ -6,12 +6,14 @@ public class Player : Character
 {
     private Rigidbody playerRigidBody;
 
-    [SerializeField]
-    private int life = 20;  // needs get/set
+    // [SerializeField]
+    public int life = 20;  // needs get/set
+
+    public bool wasDamaged = false;
 
     // [SerializeField]
     // private
-    public float jumpForce = 150.0f;
+    public float jumpForce = 9.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -19,11 +21,6 @@ public class Player : Character
         playerRigidBody = gameObject.GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        Move();
-    }
 
     public override void Move() {
         // enable player movement
@@ -31,10 +28,12 @@ public class Player : Character
         
         transform.Translate(Vector3.right * horizontalInput * moveSpeed * Time.deltaTime);  
     
+        Jump();
+    }
+
+
+    public void Jump() {
         if (Input.GetButtonDown("Jump")) { // space or y 
-            
-
-
             playerRigidBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
     }

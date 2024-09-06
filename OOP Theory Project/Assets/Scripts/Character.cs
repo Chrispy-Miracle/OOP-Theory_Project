@@ -7,16 +7,11 @@ public class Character : MonoBehaviour
 {
     public float moveSpeed = 3.0f; // needs get/set
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        // Move();
+        Move();
     }
 
     // basic movement is for enemies, because most characters will be enemies
