@@ -6,14 +6,35 @@ public class Player : Character
 {
     private Rigidbody playerRigidBody;
 
-    // [SerializeField]
-    public int life = 20;  // needs get/set
+ 
+    private int m_Life = 20;  // needs get/set
+    public int Life {
+        get { return m_Life; }
+        set { 
+            if (value < 1) {
+                Debug.Log("Game Over");
+            } else if (value > 20) {
+                Debug.Log("Error: Player can only have 20 life");
+            } else {
+                m_Life = value; 
+            }
+        }
+    }
+   
+
+    private float m_JumpForce = 9.0f;
+    public float JumpForce {
+        get { return m_JumpForce; }
+        set { 
+            if (value < 0 || value > 20) {
+                Debug.Log("Error:  JumpForce value is too high or low");
+            } else {
+                m_JumpForce = value; 
+            }
+        }
+    }
 
     public bool wasDamaged = false;
-
-    // [SerializeField]
-    // private
-    public float jumpForce = 9.0f;
 
 
     // Start is called before the first frame update
@@ -24,21 +45,21 @@ public class Player : Character
     }
 
 
-    public override void Move() {
+    public override void Move() { // polymorphism
         // enable player movement
-        HandleHorizontalMovement();
+        HandleHorizontalInput();
         HandleJump();
     }
 
-
-    void HandleHorizontalMovement() {
+    // and some abstraction
+    void HandleHorizontalInput() {
         float horizontalInput = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.right * horizontalInput * moveSpeed * Time.deltaTime); 
+        transform.Translate(Vector3.right * horizontalInput * MoveSpeed * Time.deltaTime); 
     }
 
     public void HandleJump() {
         if (Input.GetButtonDown("Jump")) { // space or y 
-            playerRigidBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            playerRigidBody.AddForce(Vector3.up * m_JumpForce, ForceMode.Impulse);
         }
     }
 

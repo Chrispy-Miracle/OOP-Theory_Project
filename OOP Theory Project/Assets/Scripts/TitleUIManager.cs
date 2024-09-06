@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class TitleUIManager : MonoBehaviour
 {
     public void LoadGame(GameObject chosenPlayer) {
-        MainManager.Instance.playerChoice = chosenPlayer;
-        SceneManager.LoadScene(1);
+        MainManager.Instance.playerChoice = chosenPlayer; // mage or rogue
+        SceneManager.LoadScene(1); // main scene
     }
 }

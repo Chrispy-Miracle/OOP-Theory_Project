@@ -7,12 +7,12 @@ public class Mage : Player
     // Update is called once per frame
     void Update()
     {
-        Move();
+        Move(); // inheritance in action
 
-        // Mage's special ability
+        // Mage's special ability (poly-morph-ism)
         if (wasDamaged) {
-            life++;
-            Debug.Log($"Mage restored 1 damage, new life {life}");
+            Life++;
+            Debug.Log($"Mage restored 1 damage, new life {Life}");
             wasDamaged = false;
         }
     }

@@ -7,6 +7,6 @@ public class EnemyMorph : Enemy
     // Start is called before the first frame update
     void Awake()
     {
-        damageDealt = 5;
+        DamageDealt = 5;
     }
 }

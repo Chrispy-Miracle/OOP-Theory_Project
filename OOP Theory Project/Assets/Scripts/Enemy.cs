@@ -4,21 +4,32 @@ using UnityEngine;
 
 public class Enemy : Character
 {
-    public int damageDealt = 3;
+    private int m_DamageDealt = 3; // encapsulation in action
+    public int DamageDealt {
+        // manually created getter with conditional setter format
+        get { return m_DamageDealt; } 
+        set { 
+            if (value < 1 || value > 10) {
+                Debug.Log("Error: DamageDealt too high or low");
+            } else {
+                m_DamageDealt = value; 
+            }
+        }
+    }
 
 
     void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.CompareTag("Player")) {
-            DoDamage(collision.gameObject, damageDealt);
+            DoDamage(collision.gameObject, m_DamageDealt);
         }
     }
 
     void DoDamage(GameObject victim, int damageDealt) {
-        Debug.Log($"{damageDealt} Damage was dealt to {victim}");
-        // do "damageDealt" to victim 
         Player playerScript = victim.GetComponent<Player>();
-        playerScript.life -= damageDealt;
-        playerScript.wasDamaged = true; 
-        Debug.Log($"player life: {playerScript.life}");
+
+        playerScript.Life -= damageDealt;
+        playerScript.wasDamaged = true;
+
+        Debug.Log($"{damageDealt} Damage was dealt to {victim}, player life: {playerScript.Life}");
     }
 }

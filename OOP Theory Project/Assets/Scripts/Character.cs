@@ -5,7 +5,18 @@ using UnityEngine.Timeline;
 
 public class Character : MonoBehaviour
 {
-    public float moveSpeed = 3.0f; // needs get/set
+    private float m_MoveSpeed = 3.0f; // backing field
+    public float MoveSpeed {
+        // manually created getter with conditional setter format
+        get { return m_MoveSpeed; } 
+        set { 
+            if (value < 1 || value > 10) {
+                Debug.Log("Error: Move speed too high or low");
+            } else {
+                m_MoveSpeed = value; 
+            }
+        }
+    }
 
 
     // Update is called once per frame
@@ -16,6 +27,6 @@ public class Character : MonoBehaviour
 
     // basic movement is for enemies, because most characters will be enemies
     public virtual void Move() {
-        transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+        transform.Translate(Vector3.left * m_MoveSpeed * Time.deltaTime);
     }
 }
