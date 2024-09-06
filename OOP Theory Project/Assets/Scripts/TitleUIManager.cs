@@ -5,19 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class TitleUIManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void LoadGame() {
+    public void LoadGame(GameObject chosenPlayer) {
+        MainManager.Instance.playerChoice = chosenPlayer;
         SceneManager.LoadScene(1);
     }
 }

@@ -15,6 +15,7 @@ public class Player : Character
     // private
     public float jumpForce = 9.0f;
 
+
     // Start is called before the first frame update
     void Start()
     {

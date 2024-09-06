@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Mage : Player
 {
+
+    void Awake() {
+        // deactivate if not chosen player
+        if (MainManager.Instance.playerChoice.name != "Mage") {
+            gameObject.SetActive(false);
+        };
+    }
     // Update is called once per frame
     void Update()
     {

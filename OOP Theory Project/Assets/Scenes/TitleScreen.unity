@@ -209,10 +209,11 @@ MonoBehaviour:
       - m_Target: {fileID: 1268924227}
         m_TargetAssemblyTypeName: TitleUIManager, Assembly-CSharp
         m_MethodName: LoadGame
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 5124305391666241280, guid: ee42f2da5b1e5a544aa70546d09c7bb1,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -556,10 +557,11 @@ MonoBehaviour:
       - m_Target: {fileID: 1268924227}
         m_TargetAssemblyTypeName: TitleUIManager, Assembly-CSharp
         m_MethodName: LoadGame
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 787768128907776396, guid: afdf7d3e56b4b4e4fbc7ca059d4f07db,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1095,7 +1097,7 @@ GameObject:
   - component: {fileID: 1268924223}
   - component: {fileID: 1268924227}
   m_Layer: 0
-  m_Name: Canvas
+  m_Name: Title Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1199,6 +1201,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c3de661468bef9488608bdcd32feb61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1352503330
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1352503332}
+  - component: {fileID: 1352503331}
+  m_Layer: 0
+  m_Name: Main Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1352503331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352503330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb44283e455941f41beb98c59297e7f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerChoice: {fileID: 0}
+--- !u!4 &1352503332
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352503330}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4, y: -0.74, z: -5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1724412955
 GameObject:
   m_ObjectHideFlags: 0
@@ -1346,7 +1393,7 @@ GameObject:
   - component: {fileID: 2002280459}
   - component: {fileID: 2002280458}
   m_Layer: 0
-  m_Name: Mage
+  m_Name: MageCharacterChoice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1451,7 +1498,7 @@ GameObject:
   - component: {fileID: 2101652972}
   - component: {fileID: 2101652971}
   m_Layer: 0
-  m_Name: Rogue
+  m_Name: RogueCharacterChoice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1553,3 +1600,4 @@ SceneRoots:
   - {fileID: 1268924226}
   - {fileID: 2002280461}
   - {fileID: 2101652974}
+  - {fileID: 1352503332}
