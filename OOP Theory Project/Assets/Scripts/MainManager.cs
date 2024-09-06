@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class MainManager : MonoBehaviour
 {
-    public static MainManager Instance; 
+    // public get, but can only be set inside this class
+    public static MainManager Instance { get; private set; }
 
-    public GameObject playerChoice = null; // new variable declared
+    public GameObject playerChoice = null; 
     
     private void Awake()
     {
