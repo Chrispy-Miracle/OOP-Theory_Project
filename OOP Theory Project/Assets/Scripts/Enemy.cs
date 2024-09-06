@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : Character
 {
-    private int damageDealt = 3;
+    public int damageDealt = 3; // needs get/set ?
 
 
     void OnCollisionEnter(Collision collision) {
