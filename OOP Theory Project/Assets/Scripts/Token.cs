@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Token : MonoBehaviour
 {
+    public Player PlayerScript { get; private set; }
+    private float destroyDelay = 5.0f;
+
 
     // Update is called once per frame
     void Update()
@@ -13,14 +16,15 @@ public class Token : MonoBehaviour
 
     void OnTriggerEnter(Collider other) {
         if(other.gameObject.CompareTag("Player")) {
-            Debug.Log("token collected");
+            PlayerScript = other.gameObject.GetComponent<Player>();
+            
             EnhancePlayer();
-            Destroy(gameObject);            
+            gameObject.SetActive(false);
+            Destroy(gameObject, destroyDelay);            
         }
-
     }
 
-    void EnhancePlayer() {
+    public virtual void EnhancePlayer() {
         Debug.Log("Enhance player");
     }
 }

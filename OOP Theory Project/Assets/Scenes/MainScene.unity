@@ -204,8 +204,9 @@ GameObject:
   - component: {fileID: 123772641}
   - component: {fileID: 123772640}
   - component: {fileID: 123772644}
+  - component: {fileID: 123772645}
   m_Layer: 0
-  m_Name: Token A
+  m_Name: StarToken
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -307,6 +308,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c73b2f1ed9435248a475e2a1a267a62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &123772645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123772639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f87c9b0c9e6016a4abda07f870272c22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &229601415
@@ -464,8 +477,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b9a426aa55ce834389fd6553e32fe53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  damageDealt: 3
 --- !u!65 &355219616
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -564,8 +575,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abc6515a3e6f22249a1c54fef7751fdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  damageDealt: 3
 --- !u!1 &419437617
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,8 +588,9 @@ GameObject:
   - component: {fileID: 419437620}
   - component: {fileID: 419437619}
   - component: {fileID: 419437618}
+  - component: {fileID: 419437623}
   m_Layer: 0
-  m_Name: Token B
+  m_Name: HeartToken
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -684,6 +694,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &419437623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419437617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f7207e13061b3549b609381ff9c0f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &730437733
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,8 +977,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b9a426aa55ce834389fd6553e32fe53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  damageDealt: 3
 --- !u!65 &828341140
 BoxCollider:
   m_ObjectHideFlags: 0
