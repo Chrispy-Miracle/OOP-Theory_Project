@@ -8,6 +8,6 @@ public class MoveLeft : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.Translate(Vector3.left * scrollSpeed * Time.deltaTime);
+        transform.Translate(Vector3.left * scrollSpeed * Time.deltaTime, Space.World);
     }
 }
