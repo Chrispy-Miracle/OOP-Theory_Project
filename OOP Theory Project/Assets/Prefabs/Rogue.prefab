@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 3797875929791292722}
   - component: {fileID: 5309231831464228346}
   - component: {fileID: -1390342465875405080}
-  - component: {fileID: -8368355392127553776}
   m_Layer: 0
   m_Name: Rogue
   m_TagString: Player
@@ -148,15 +147,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
---- !u!114 &-8368355392127553776
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 787768128907776396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cd4af5208f4b4e4b86ab329319b54e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
