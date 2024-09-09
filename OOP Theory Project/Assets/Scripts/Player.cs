@@ -64,8 +64,10 @@ public class Player : Character
     }
 
     public void DeactivateIfNot(string playerType) {
-        if (MainManager.Instance.playerChoice.name != playerType) {
-            gameObject.SetActive(false);
-        };
+        if (MainManager.Instance != null) {
+            if (MainManager.Instance.playerChoice.name != playerType) {
+                gameObject.SetActive(false);
+            };            
+        }
     }
 }
