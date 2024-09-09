@@ -6,6 +6,8 @@ public class Player : Character
 {
     private Rigidbody playerRigidBody;
 
+    private float upperBound = 6.0f;
+
  
     private int m_Life = 20;  // needs get/set
     public int Life {
@@ -42,6 +44,12 @@ public class Player : Character
     {
         DeactivateIfNot(gameObject.name); // ensures just one player object
         playerRigidBody = gameObject.GetComponent<Rigidbody>();
+    }
+
+    void Update() {
+        if (transform.position.y > upperBound) {
+            transform.position = new Vector3(0, upperBound, 0);
+        }
     }
 
 

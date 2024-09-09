@@ -11,25 +11,65 @@ public class SpawnManager : MonoBehaviour
     public GameObject heartToken;
     public GameObject starToken;
 
+    private float platformYRange = 1.5f;
+
+    private float spawnXModifier = 15.0f;
+
 
     // Start is called before the first frame update
     void Start()
     {
-
-        Invoke(nameof(InstantiatePrefabs), 2);
-
-
+        Invoke(nameof(SpawnPlatforms), 1);
+        StartCoroutine(SpawnOnGround());
     }
 
-    void InstantiatePrefabs () {
-        Instantiate(platform, platform.transform.position, platform.transform.rotation);
-
-        Instantiate(enemy, enemy.transform.position, enemy.transform.rotation);
-        Instantiate(enemyMorph, enemyMorph.transform.position, enemyMorph.transform.rotation);
-       
-        Instantiate(heartToken, heartToken.transform.position, heartToken.transform.rotation);
-        Instantiate(starToken, starToken.transform.position, starToken.transform.rotation);
-
-        Invoke(nameof(InstantiatePrefabs), 2);
+    IEnumerator SpawnOnGround() {
+        while (true) {
+            float delay = Random.Range(1, 3);
+            SpawnRandomGameObject(0.0f);
+            Debug.Log("coroutine happening");
+            yield return new WaitForSeconds(delay);
+        }
+        
     }
+
+
+    void SpawnPlatforms() {
+        float yPosition = Random.Range(-platformYRange, platformYRange);
+        SpawnGameObject(platform, yPosition);
+
+        SpawnRandomGameObject(yPosition + platform.transform.position.y + .5f);
+
+        Invoke(nameof(SpawnPlatforms), Random.Range(2.5f, 3.5f));
+    }
+
+
+    void SpawnRandomGameObject(float yPosition) {
+        int randomInt = Random.Range(0, 4);
+        
+        switch (randomInt) {
+            case 0:
+                SpawnGameObject(enemy, yPosition);
+                break;
+            case 1:
+                SpawnGameObject(enemyMorph, yPosition);
+                break;
+            case 2:
+                SpawnGameObject(starToken, yPosition);
+                break;
+            case 3:
+                SpawnGameObject(heartToken, yPosition);
+                break;
+            default:
+                break;             
+        }
+    }
+
+
+    void SpawnGameObject(GameObject prefab, float yPosition) {
+        Vector3 positionModifier = new Vector3(spawnXModifier, yPosition, 0);
+
+        Instantiate(prefab, prefab.transform.position + positionModifier, prefab.transform.rotation);
+    }
+
 }
