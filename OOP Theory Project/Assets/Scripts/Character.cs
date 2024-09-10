@@ -5,7 +5,8 @@ using UnityEngine.Timeline;
 
 public class Character : MonoBehaviour
 {
-    private float m_MoveSpeed = 3.0f; // backing field (encapsulation)
+    // ENCAPSULATION
+    private float m_MoveSpeed = 3.0f; // backing field 
     public float MoveSpeed {
         // manually created getter with conditional setter format
         get { return m_MoveSpeed; } 
@@ -26,7 +27,7 @@ public class Character : MonoBehaviour
     }
 
     // basic movement is for enemies, because most characters will be enemies
-    public virtual void Move() {
+    public virtual void Move() {  // POLYMORPHISM - overrides enables by "virtual"
         transform.Translate(Vector3.left * m_MoveSpeed * Time.deltaTime);
     }
 }

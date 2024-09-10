@@ -23,7 +23,7 @@ public class SpawnManager : MonoBehaviour
         StartCoroutine(SpawnOnGround());
     }
 
-
+    // ABSTRACTION
     IEnumerator SpawnOnGround() {  // spawn random on ground
         while (true) {
             float delay = Random.Range(1, 3);
@@ -33,7 +33,7 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-
+    // ABSTRACTION
     void SpawnPlatforms() {
         float yPosition = Random.Range(-platformYRange, platformYRange);
         SpawnGameObject(Platform, yPosition);
@@ -44,7 +44,7 @@ public class SpawnManager : MonoBehaviour
         Invoke(nameof(SpawnPlatforms), Random.Range(2.5f, 3.5f));
     }
 
-
+    // ABSTRACTION
     void SpawnRandomGameObject(float yPosition) {
         int randomInt = Random.Range(0, 4);
         
@@ -66,7 +66,7 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-
+    // ABSTRACTION
     void SpawnGameObject(GameObject prefab, float yPosition) {
         Vector3 positionModifier = new Vector3(spawnXModifier, yPosition, 0);
 

@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : Character
+public class Enemy : Character  // INHERITANCE
 {
-    private int m_DamageDealt = 3; // encapsulation in action
+    private int m_DamageDealt = 3; // ENCAPSULATION
     public int DamageDealt {
         // manually created getter with conditional setter format
         get { return m_DamageDealt; } 
@@ -25,7 +25,7 @@ public class Enemy : Character
         }
     }
 
-    void DoDamage(GameObject victim, int damageDealt) {
+    void DoDamage(GameObject victim, int damageDealt) {  // ABSTRACTION
         Player playerScript = victim.GetComponent<Player>();
 
         playerScript.Life -= damageDealt;

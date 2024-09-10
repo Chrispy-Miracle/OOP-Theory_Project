@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMorph : Enemy
+public class EnemyMorph : Enemy  // INHERITANCE
 {
-    // Start is called before the first frame update
+    // POLYMORPHISM
     void Awake()
     {
-        DamageDealt = 5;
+        DamageDealt = 5;  
     }
 }
