@@ -617,6 +617,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SimpleFarmer_Woman_01_Brown
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f3f69bcf5a1514c458ed5c9b96f28e34, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f3f69bcf5a1514c458ed5c9b96f28e34, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.25
@@ -1315,6 +1319,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SimpleFarmer_Man_01_Brown
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6f52b946693e54048af74f5cd6ba49f8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6f52b946693e54048af74f5cd6ba49f8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.25
@@ -1512,7 +1520,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &2002280458
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1617,7 +1625,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &2101652971
 BoxCollider:
   m_ObjectHideFlags: 0
