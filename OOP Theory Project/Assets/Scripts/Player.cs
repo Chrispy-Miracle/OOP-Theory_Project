@@ -45,13 +45,12 @@ public class Player : Character
     }
 
 
-
-
     public override void Move() { // polymorphism
         // enable player movement
         HandleHorizontalInput();
         HandleJump();
     }
+
 
     // and some abstraction
     void HandleHorizontalInput() {
@@ -59,17 +58,17 @@ public class Player : Character
         transform.Translate(Vector3.right * horizontalInput * MoveSpeed * Time.deltaTime); 
     }
 
+
     public void HandleJump() {
         if (Input.GetButtonDown("Jump")) { // space or y 
             playerRigidBody.AddForce(Vector3.up * m_JumpForce, ForceMode.Impulse);
         }
     }
 
+
     public void DeactivateIfNot(string playerType) {
-        // if (MainManager.Instance != null) {
-            if (MainManager.Instance.playerChoice.name != playerType) {
-                gameObject.SetActive(false);
-            };            
-        // }
+        if (MainManager.Instance.playerChoice.name != playerType) {
+            gameObject.SetActive(false);
+        }; 
     }
 }

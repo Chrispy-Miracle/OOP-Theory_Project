@@ -15,6 +15,7 @@ public class Token : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other) {
+        // enhances player if collected
         if(other.gameObject.CompareTag("Player")) {
             PlayerScript = other.gameObject.GetComponent<Player>();
             

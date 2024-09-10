@@ -19,6 +19,7 @@ public class Enemy : Character
 
 
     void OnCollisionEnter(Collision collision) {
+        // damgage player upon collision
         if (collision.gameObject.CompareTag("Player")) {
             DoDamage(collision.gameObject, m_DamageDealt);
         }

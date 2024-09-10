@@ -10,6 +10,7 @@ public class DestoyOffScreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // cant be past left or lower bound
         if (transform.position.x < leftBound || transform.position.y < lowerBound) {
             gameObject.SetActive(false);
             Destroy(gameObject, 3);

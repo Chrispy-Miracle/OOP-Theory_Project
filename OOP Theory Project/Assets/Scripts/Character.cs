@@ -5,7 +5,7 @@ using UnityEngine.Timeline;
 
 public class Character : MonoBehaviour
 {
-    private float m_MoveSpeed = 3.0f; // backing field
+    private float m_MoveSpeed = 3.0f; // backing field (encapsulation)
     public float MoveSpeed {
         // manually created getter with conditional setter format
         get { return m_MoveSpeed; } 

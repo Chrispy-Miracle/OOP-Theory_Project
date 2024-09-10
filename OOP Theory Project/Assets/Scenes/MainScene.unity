@@ -722,14 +722,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951284886ce6f2a4eb88b9dc19a6ffc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platform: {fileID: 4968829569459930016, guid: 4a99ec925caae6644ac6a17224867b5c,
+  Platform: {fileID: 4968829569459930016, guid: 4a99ec925caae6644ac6a17224867b5c,
     type: 3}
-  enemy: {fileID: 7039703274645437189, guid: 8043037a9f6d2d94dbcde0e4a1232a44, type: 3}
-  enemyMorph: {fileID: 3972632758369035871, guid: fcc87b2a739db15408101a9579bd2af0,
+  Enemy: {fileID: 7039703274645437189, guid: 8043037a9f6d2d94dbcde0e4a1232a44, type: 3}
+  EnemyMorph: {fileID: 3972632758369035871, guid: fcc87b2a739db15408101a9579bd2af0,
     type: 3}
-  heartToken: {fileID: 8797255032715577578, guid: 8e82a7af6d2d0b4478727d5d6aa1c296,
+  HeartToken: {fileID: 8797255032715577578, guid: 8e82a7af6d2d0b4478727d5d6aa1c296,
     type: 3}
-  starToken: {fileID: 8707351681814680720, guid: 59392fa35294fe74aacd9fdf574be492,
+  StarToken: {fileID: 8707351681814680720, guid: 59392fa35294fe74aacd9fdf574be492,
     type: 3}
 --- !u!4 &1631078764
 Transform:

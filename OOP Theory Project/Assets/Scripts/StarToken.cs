@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class StarToken : Token
 {
-
     private float speedBonus = 2.5f;
-
 
     public override void EnhancePlayer() {
         PlayerScript.MoveSpeed += speedBonus; // add speed bonus
